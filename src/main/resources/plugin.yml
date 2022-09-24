@@ -1,0 +1,4 @@
+name: Armies
+version: '${project.version}'
+main: me.rownox.armies.Armies
+api-version: 1.19
