@@ -12,15 +12,16 @@ public class KitCmd implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-
         if (sender instanceof Player p) {
-            if (args.length >= 1 ) {
-                if (Bukkit.getPlayer(args[0]) != null) {
-                    Player target = Bukkit.getPlayer(args[0]);
-                    KitPlayer(target);
+            if(p.hasPermission("armies.kit")){
+                if (args.length >= 1 ) {
+                    if (Bukkit.getPlayer(args[0]) != null) {
+                        Player target = Bukkit.getPlayer(args[0]);
+                        KitPlayer(target);
+                    }
+                }else {
+                    KitPlayer(p);
                 }
-            }else {
-                KitPlayer(p);
             }
             return true;
         }
