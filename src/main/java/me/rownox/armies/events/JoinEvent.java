@@ -15,7 +15,6 @@ public class JoinEvent implements Listener {
         if (!player.hasPlayedBefore()) {
             player.teleport(new Location(Bukkit.getWorld("world"),0,6,0,0,0));
             KitPlayer(player);
-
         }
     }
 }
