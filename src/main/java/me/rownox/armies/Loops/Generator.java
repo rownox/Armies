@@ -13,7 +13,7 @@ public class Generator {
     public static void generate(){
         new BukkitRunnable(){
             public void run(){
-                Item i = (Bukkit.getWorld("world")).dropItem(new Location(Bukkit.getWorld("world"), 73.5, 7, -72.5), new ItemStack(Material.DIAMOND) );
+                Item i = (Bukkit.getWorld("world")).dropItem(new Location(Bukkit.getWorld("world"), 73.5, 10, -72.5), new ItemStack(Material.DIAMOND) );
                 i.setVelocity(new Vector(0, 0, 0));
                 Bukkit.broadcastMessage("A diamond has been generated at the Diamond Well");
             }
