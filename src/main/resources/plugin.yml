@@ -7,3 +7,5 @@ commands:
     usage: "/kit <player>"
   shop:
     usage: "/shop"
+  discord:
+    usage: "/discord"

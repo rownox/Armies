@@ -1,6 +1,7 @@
 package me.rownox.armies;
 
 import me.rownox.armies.Loops.Generator;
+import me.rownox.armies.commands.DiscordCmd;
 import me.rownox.armies.commands.KitCmd;
 import me.rownox.armies.commands.ShopCmd;
 import me.rownox.armies.events.JoinEvent;
@@ -17,6 +18,7 @@ public final class Armies extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinEvent(), this);
         this.getCommand("kit").setExecutor(new KitCmd());
         this.getCommand("shop").setExecutor(new ShopCmd());
+        this.getCommand("discord").setExecutor(new DiscordCmd());
         Generator.generate();
     }
 
@@ -27,4 +29,5 @@ public final class Armies extends JavaPlugin {
     public static Armies getInstance() {
         return (Armies) Bukkit.getPluginManager().getPlugin("Armies");
     }
+
 }
