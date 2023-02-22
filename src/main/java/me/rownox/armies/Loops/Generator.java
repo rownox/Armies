@@ -17,7 +17,7 @@ public class Generator {
                 i.setVelocity(new Vector(0, 0, 0));
                 Bukkit.broadcastMessage("A diamond has been generated at the Diamond Well");
             }
-        }.runTaskTimer(Armies.getInstance(), 20*60,20*60);
+        }.runTaskTimer(Armies.getInstance(), 20*60*5,20*60*5);
 
 
     }
