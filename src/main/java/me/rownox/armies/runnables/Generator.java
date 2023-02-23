@@ -3,6 +3,7 @@ package me.rownox.armies.runnables;
 import me.rownox.armies.Armies;
 import me.rownox.armies.utils.ChatUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
@@ -20,7 +21,7 @@ public class Generator {
                 i.setVelocity(new Vector(0, 1, 0));
 
                 for (Player p : Bukkit.getOnlinePlayers()) {
-                    ChatUtils.TextSpacer("A diamond has been generated at the Diamond Well", p);
+                    ChatUtils.TextSpacer(ChatColor.AQUA + "A diamond has been generated at the well outside the safe-zone", p);
                 }
 
             }
