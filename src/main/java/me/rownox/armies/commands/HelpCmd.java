@@ -15,7 +15,7 @@ public class HelpCmd implements CommandExecutor {
     "/spawn - Teleport to the spawn",
     "/sethome (name) - Set your home",
     "/home (name) - Teleport to your home",
-    "/homes - See a list of your homes"
+    "/homes - See a list of your homes",
     "/pay - Give money to another player"};
 
 
