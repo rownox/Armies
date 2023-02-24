@@ -3,9 +3,9 @@ package me.rownox.armies.runnables;
 import me.rownox.armies.Armies;
 import me.rownox.armies.utils.ChatUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -21,11 +21,12 @@ public class Generator {
                 i.setVelocity(new Vector(0, 1, 0));
 
                 for (Player p : Bukkit.getOnlinePlayers()) {
-                    ChatUtils.TextSpacer(ChatColor.AQUA + "A diamond has been generated at the well outside the safe-zone", p);
+                    ChatUtils.TextSpacer("A diamond has been generated at the Diamond  in the warzone.", p);
+                    p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1, 1);
                 }
 
             }
-        }.runTaskTimer(Armies.getInstance(), 20*30,20*30);
+        }.runTaskTimer(Armies.getInstance(), 20*60*4,20*60*4);
 
 
     }
