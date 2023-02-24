@@ -1,5 +1,6 @@
 package me.rownox.armies;
 
+import me.rownox.armies.commands.HelpCmd;
 import me.rownox.armies.runnables.Generator;
 import me.rownox.armies.commands.DiscordCmd;
 import me.rownox.armies.commands.KitCmd;
@@ -25,6 +26,7 @@ public final class Armies extends JavaPlugin {
         this.getCommand("kit").setExecutor(new KitCmd());
         this.getCommand("shop").setExecutor(new ShopCmd());
         this.getCommand("discord").setExecutor(new DiscordCmd());
+        this.getCommand("help").setExecutor(new HelpCmd());
         Generator.generate();
 
         if (!setupEconomy() ) {

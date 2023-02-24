@@ -9,3 +9,5 @@ commands:
     usage: "/shop"
   discord:
     usage: "/discord"
+  help:
+    usage: "/help"
