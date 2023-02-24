@@ -1,13 +1,16 @@
 package me.rownox.armies;
 
-import me.rownox.armies.commands.HelpCmd;
-import me.rownox.armies.utils.Generator;
+import com.earth2me.essentials.Essentials;
 import me.rownox.armies.commands.DiscordCmd;
+import me.rownox.armies.commands.HelpCmd;
 import me.rownox.armies.commands.KitCmd;
 import me.rownox.armies.commands.ShopCmd;
+import me.rownox.armies.events.BalanceEvent;
 import me.rownox.armies.events.JoinEvent;
+import me.rownox.armies.utils.Generator;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,10 +20,12 @@ public final class Armies extends JavaPlugin {
 
     private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy economy = null;
+    private static Essentials essentials;
 
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new JoinEvent(), this);
+        getServer().getPluginManager().registerEvents(new BalanceEvent(), this);
 
         this.getCommand("kit").setExecutor(new KitCmd());
         this.getCommand("shop").setExecutor(new ShopCmd());
@@ -33,6 +38,8 @@ public final class Armies extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
+
+        setupEssentials();
 
     }
 
@@ -51,6 +58,18 @@ public final class Armies extends JavaPlugin {
         }
         economy = rsp.getProvider();
         return economy != null;
+    }
+
+    private void setupEssentials() {
+        Plugin essentialsPlg = Bukkit.getPluginManager().getPlugin("Essentials");
+
+        if (essentials.isEnabled() && (essentials instanceof Essentials)) {
+            essentials = (Essentials) essentialsPlg;
+        } else {
+            // Disable the plugin
+            Bukkit.getPluginManager().disablePlugin(this);
+        }
+
     }
 
     public static Economy getEconomy() {

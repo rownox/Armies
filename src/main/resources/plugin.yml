@@ -4,6 +4,7 @@ main: me.rownox.armies.Armies
 api-version: 1.19
 depend:
   - Vault
+  - Essentials
 commands:
   kit:
     usage: "/kit <player>"
