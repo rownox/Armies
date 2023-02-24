@@ -4,17 +4,14 @@ import me.rownox.armies.Armies;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.*;
 
-public class SidebarUtils extends JavaPlugin {
+public class SidebarUtils {
 
-    private static ScoreboardManager scoreboardManager;
-    private static Scoreboard scoreboard;
+    private static final ScoreboardManager scoreboardManager = Bukkit.getScoreboardManager();
 
     public static void initScoreboard(Player p) {
-        scoreboardManager = Bukkit.getScoreboardManager();
-        scoreboard = scoreboardManager.getNewScoreboard();
+        Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
 
         Team team = scoreboard.registerNewTeam("Sidebar");
         team.setDisplayName("Armies");
