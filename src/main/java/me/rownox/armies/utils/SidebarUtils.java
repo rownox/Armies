@@ -27,7 +27,7 @@ public class SidebarUtils {
         Score score1 = objective.getScore("                              ");
         score1.setScore(3);
 
-        // Refernce name: "balance", See BalanceEvent.java
+        // Reference name: "balance", See BalanceEvent.java
         updateLine(scoreboard, objective, "balance", ChatColor.GREEN + "Balance: ", ChatColor.GREEN, ChatColor.RED.toString() + Armies.getEconomy().getBalance(p)).setScore(2);
 
         Score score3 = objective.getScore("");
