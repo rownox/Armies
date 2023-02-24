@@ -3,11 +3,10 @@ package me.rownox.armies.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class HelpCmd implements CommandExecutor {
 
-    String[] message = {
+    private final String[] message = {
             "/tpa (username) - Teleport to other players",
             "/shop - Open the in-game shop",
             "/bal - Check your balance",
@@ -21,12 +20,9 @@ public class HelpCmd implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player p) {
-            for (String line : message) {
-                p.sendMessage(line);
-            }
-            return true;
+        for (String line : message) {
+            sender.sendMessage(line);
         }
-        return false;
+        return true;
     }
 }
