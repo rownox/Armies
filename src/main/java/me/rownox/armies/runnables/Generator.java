@@ -21,7 +21,7 @@ public class Generator {
                 i.setVelocity(new Vector(0, 1, 0));
 
                 for (Player p : Bukkit.getOnlinePlayers()) {
-                    ChatUtils.TextSpacer("A diamond has been generated at the Diamond Well", p);
+                    ChatUtils.TextSpacer("A diamond has been generated at the Diamond  in the warzone.", p);
                     p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1, 1);
                 }
 
