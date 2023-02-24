@@ -5,6 +5,7 @@ import me.rownox.armies.commands.DiscordCmd;
 import me.rownox.armies.commands.HelpCmd;
 import me.rownox.armies.commands.KitCmd;
 import me.rownox.armies.commands.ShopCmd;
+import me.rownox.armies.events.BalanceEvent;
 import me.rownox.armies.events.JoinEvent;
 import me.rownox.armies.utils.Generator;
 import net.milkbowl.vault.economy.Economy;
@@ -24,6 +25,7 @@ public final class Armies extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new JoinEvent(), this);
+        getServer().getPluginManager().registerEvents(new BalanceEvent(), this);
 
         this.getCommand("kit").setExecutor(new KitCmd());
         this.getCommand("shop").setExecutor(new ShopCmd());
