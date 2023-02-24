@@ -5,6 +5,7 @@ import me.rownox.armies.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -21,10 +22,11 @@ public class Generator {
 
                 for (Player p : Bukkit.getOnlinePlayers()) {
                     ChatUtils.TextSpacer("A diamond has been generated at the Diamond Well", p);
+                    p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1, 1);
                 }
 
             }
-        }.runTaskTimer(Armies.getInstance(), 20*30,20*30);
+        }.runTaskTimer(Armies.getInstance(), 20*60*4,20*60*4);
 
 
     }
