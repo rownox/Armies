@@ -1,12 +1,11 @@
 package me.rownox.armies;
 
 import me.rownox.armies.commands.HelpCmd;
-import me.rownox.armies.runnables.Generator;
+import me.rownox.armies.utils.Generator;
 import me.rownox.armies.commands.DiscordCmd;
 import me.rownox.armies.commands.KitCmd;
 import me.rownox.armies.commands.ShopCmd;
 import me.rownox.armies.events.JoinEvent;
-import me.rownox.armies.utils.SidebarUtils;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -27,7 +26,7 @@ public final class Armies extends JavaPlugin {
         this.getCommand("shop").setExecutor(new ShopCmd());
         this.getCommand("discord").setExecutor(new DiscordCmd());
         this.getCommand("help").setExecutor(new HelpCmd());
-        Generator.generate();
+        new Generator();
 
         if (!setupEconomy() ) {
             log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
