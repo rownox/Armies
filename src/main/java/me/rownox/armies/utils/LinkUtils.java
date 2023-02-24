@@ -6,7 +6,7 @@ import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 
-public class LinkUtils {
+public final class LinkUtils {
     public static TextComponent discordInvite(String name) {
         TextComponent msg = new TextComponent(ChatColor.BOLD + "" + ChatColor.YELLOW + name);
         msg.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§fDiscord Server").create()));
