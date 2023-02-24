@@ -27,8 +27,8 @@ public class SidebarUtils {
         Score score1 = objective.getScore("                              ");
         score1.setScore(3);
 
-        Score score2 = objective.getScore(ChatColor.GREEN + "Balance: " + ChatColor.RED + Armies.getEconomy().getBalance(p));
-        score2.setScore(2);
+        // ID: ChatColor.GREEN
+        updateLine(scoreboard, objective, "balance", ChatColor.GREEN + "Balance: ", ChatColor.GREEN, ChatColor.RED.toString() + Armies.getEconomy().getBalance(p)).setScore(2);
 
         Score score3 = objective.getScore("");
         score3.setScore(1);
@@ -37,5 +37,16 @@ public class SidebarUtils {
         score4.setScore(0);
 
         p.setScoreboard(scoreboard);
+    }
+
+    private static Score updateLine(Scoreboard board, Objective objective, String name, String prefix, ChatColor chatColor, String suffix) {
+        String ID = chatColor.toString();
+        Team team = board.registerNewTeam(name);
+
+        team.addEntry(ID);
+        team.setPrefix(prefix);
+        team.setSuffix(suffix);
+
+        return objective.getScore(ID);
     }
 }
